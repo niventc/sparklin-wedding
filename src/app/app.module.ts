@@ -1,16 +1,22 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-
-import { AppComponent } from './app.component';
-
+import { AppComponent } from "./app.component";
+import { DayRsvpComponent } from "./day-rsvp/day-rsvp.component";
+import { AppRoutingModule } from "./app-routing.module";
+import { HomeComponent } from "./home/home.component";
+import { EveningRsvpComponent } from "./evening-rsvp/evening-rsvp.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DayRsvpComponent,
+    HomeComponent,
+    EveningRsvpComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
