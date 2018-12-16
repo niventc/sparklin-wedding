@@ -1,0 +1,156 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+
+    .panel {
+        flex: 1 1 100%;
+        position: relative;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &.header {
+            background-image: url("../../assets/watercolour-wedding-background.png");
+            background-size: cover;
+            height: 90vh;
+        }
+
+        .inner-border {
+            &.small {
+                margin: 80px;
+
+                &.left {
+                    transform: rotate(1deg);
+                }
+
+                &.right {
+                    transform: rotate(-1deg);
+                }
+            }
+
+            // box-shadow: 0px 0px 5px 2px white;
+            margin: 60px;
+            border: 3px solid gold;
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.1), 
+                -1px -1px 2px rgba(0,0,0,0.1), 
+                inset 1px 1px 2px rgba(0,0,0,0.1), 
+                inset -1px -1px 2px rgba(0,0,0,0.1);
+
+            &.rotate-right {
+                transform: rotate(2deg);
+            }
+
+            &.rotate-left {
+                transform: rotate(-2deg);
+            }
+        }
+
+        iframe {
+            width: 100%;
+        }
+
+        // .scroll-down {
+        //     &:after {
+        //         border-top: 30px solid rgb(204, 167, 0);
+        //         border-left: 90px solid transparent; 
+        //         border-right: 90px solid transparent; 
+        //         bottom: 0px;
+        //         content: "";
+        //         position: absolute;
+        //         left: 45%;
+        //         margin-left: -21px;
+        //         width: 0; 
+        //         height: 0;
+        //     }
+        // }
+    }
+
+
+}
+
+
+h1 {
+    margin: 100px;
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: 12vw;
+    color: white;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+h3 {
+    font-family: sans-serif;
+    font-size: 4vw;
+    color: white;
+    font-weight: 500;
+    margin: 0;
+}
+h4 {
+    font-family: sans-serif;
+    font-size: 3vw;
+    color: white;
+    font-weight: 500;
+    margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .container {
+        .panel {
+            .inner-border {
+                margin: 40px;
+
+                &.small {
+                    margin: 60px;
+                }
+            }
+
+            .chevron {
+                bottom: 100px;
+
+                .left, .right {
+                    width: 40px;
+                }
+            }
+        }
+    }
+
+    h1 {
+        margin: 80px;
+        font-size: 16vw;
+    }
+}
+
+
+.chevron {
+    position: absolute;
+    bottom: 120px;
+
+    .left, .right {
+        border-bottom: 3px solid gold;
+        content: "";
+        width: 60px;
+        float: left;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.1), 
+            inset 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .left {
+        transform: rotate(20deg);
+        margin-right: -1.5px;
+    }
+
+    .right {
+        transform: rotate(-20deg);
+        margin-left: -1.5px;
+    }
+}
