@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
 import { DayRsvpComponent } from "./day-rsvp/day-rsvp.component";
@@ -16,7 +17,8 @@ import { EveningRsvpComponent } from "./evening-rsvp/evening-rsvp.component";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

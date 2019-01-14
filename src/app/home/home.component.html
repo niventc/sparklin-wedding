@@ -11,27 +11,59 @@
     <!-- <div class="inner-border small right"></div>
     <div class="inner-border small left"></div> -->
 
-    <div class="chevron">
+    <div class="password-container" *ngIf="!(isDayGuest || isEveningGuest)">
+      <input size="9" type="text" name="password" id="password" placeholder="Password" [ngModel]="password" (ngModelChange)="checkPassword($event)" />
+    </div>
+
+    <div class="chevron" *ngIf="isDayGuest || isEveningGuest">
       <div class="left"></div>
       <div class="right"></div>
     </div>
   </div>
 
-  <div class="panel">
+  <div class="panel content" *ngIf="isDayGuest || isEveningGuest">
+
+    <div style="padding:24px"></div>
+
     <h4>Join us to celebrate the union of</h4>
     <h3>Vincent Sparkes & Ursula Carlin</h3>
     <h4>at</h4>
-    <h3>2pm</h3>
-    <h4>on</h4>
-    <h3>Saturday 22nd June 2019</h3>
-    <h4>at</h4>
-    <h3>The Ritz, London</h3>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.3416409879333!2d-0.14376628366171024!3d51.50694791855627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760529d30fc857%3A0x596135811e044014!2sThe+Ritz+London!5e0!3m2!1sen!2suk!4v1544996338298" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
-    <h4>followed by an evening reception from</h4>
+
+    <div style="width: 100%" *ngIf="isDayGuest">
+      <h3>2pm</h3>
+      <h4>on</h4>
+      <h3>Saturday 22nd June 2019</h3>
+      <h4>at</h4>
+      <h3>The Ritz, London</h3>
+
+      <div style="padding:24px"></div>
+
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.3416409879333!2d-0.14376628366171024!3d51.50694791855627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760529d30fc857%3A0x596135811e044014!2sThe+Ritz+London!5e0!3m2!1sen!2suk!4v1544996338298" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+
+      <div style="padding:24px"></div>
+
+      <h4>followed by an evening reception from</h4>
+    </div>
+
     <h3>5pm until 11pm</h3>
     <h4>at</h4>
     <h3>Blue Posts, Bennet Street, London</h3>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.3427909912743!2d-0.14272598366175196!3d51.50692681855789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d62cd18d37%3A0x8b17e94d52ee3429!2sBlue+Posts!5e0!3m2!1sen!2suk!4v1544996724129" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+    <div style="padding:24px"></div>
+
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.3427909912743!2d-0.14272598366175196!3d51.50692681855789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d62cd18d37%3A0x8b17e94d52ee3429!2sBlue+Posts!5e0!3m2!1sen!2suk!4v1544996724129" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    
+    <div class="rsvp-container" *ngIf="isDayGuest">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSflvMF-OCwgPWS2vSXf-9ti1TJNK24QqD1USpYlfHev1UDpyw/viewform?embedded=true" width="640px" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    </div>
+
+    <div class="rsvp-container" *ngIf="isEveningGuest">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffSDBHgZECYHRsiOFrkoctkFJAZI8IIr4oEbiX34FLmTdZeg/viewform?embedded=true" width="640px" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>      
+    </div>
   </div>
 </div>
 
@@ -40,6 +72,7 @@
 
 
 
-
-<a routerLink="resvept">Day Guest RSVP</a>
-<a routerLink="areessveepee">Evening Guest RSVP</a>
+<div *ngIf="isDayGuest || isEveningGuest">
+  <a routerLink="resvept">Day Guest RSVP</a>
+  <a routerLink="areessveepee">Evening Guest RSVP</a>
+</div>

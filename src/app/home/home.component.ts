@@ -7,9 +7,24 @@ import { Component, OnInit } from "@angular/core";
 })
 export class HomeComponent implements OnInit {
 
+  public password = "";
+  public isDayGuest = false;
+  public isEveningGuest = false;
+
+  private daytimePassword = "c3Vuc2hpbmU=";
+  private eveningPassword = "bW9vbmxpZ2h0";
+
   constructor() { }
 
-  ngOnInit() {
+  public ngOnInit(): void {
+  }
+
+  public checkPassword(password: string): void {
+    if (btoa(password) === this.daytimePassword) {
+      this.isDayGuest = true;
+    } else if (btoa(password) === this.eveningPassword) {
+      this.isEveningGuest = true;
+    }
   }
 
 }

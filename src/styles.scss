@@ -1,16 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Monsieur+La+Doulaise');
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
 html {
     height: 100%;
 }
 
 body {
-    background-color: #fdd9d2;
+    background-color: #b6ceef;
     /* background-image: url("assets/corner-tl.png"), url("assets/corner-tr.png"), url("assets/corner-bl.png"), url("assets/corner-br.png");
     background-position: top left, top right, bottom left, bottom right;
     background-repeat: no-repeat; 
     background-size: 10%; */
     height: 100%;
     margin: 0;
+    font-family: 'Poiret One', cursive;
+}
+
+h1, h2, h3, h4, p, input {
+    font-family: 'Poiret One', cursive;
 }
