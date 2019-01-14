@@ -7,7 +7,10 @@ html {
 }
 
 body {
-    background-color: #b6ceef;
+    background: rgb(245,203,221);
+    background: linear-gradient(169deg, rgba(245,203,221,1) 0%, rgba(148,187,233,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     /* background-image: url("assets/corner-tl.png"), url("assets/corner-tr.png"), url("assets/corner-bl.png"), url("assets/corner-br.png");
     background-position: top left, top right, bottom left, bottom right;
     background-repeat: no-repeat; 
