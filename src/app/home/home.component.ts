@@ -28,3 +28,15 @@ export class HomeComponent implements OnInit {
   }
 
 }
+
+
+window.onscroll = () => {
+  const container = document.getElementById("container");
+  const content = document.getElementById("content");
+
+  if (window.pageYOffset > content.offsetTop - 100) {
+    container.classList.add("sticky");
+  } else {
+    container.classList.remove("sticky");
+  }
+};
