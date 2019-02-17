@@ -2,24 +2,35 @@
 @import url('https://fonts.googleapis.com/css?family=Monsieur+La+Doulaise');
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
+@font-face {
+    font-family: 'Futura';
+    src: url('./assets/futura/FuturaBT-Light.eot');
+}
+
 html {
-    height: 100%;
+    min-height: 100%;    
+    // background: rgb(245,203,221);
+    // background: linear-gradient(180deg, rgba(245,203,221,1) 0%, rgba(148,187,233,1) 100%);    
 }
 
 body {
-    background: rgb(245,203,221);
-    background: linear-gradient(169deg, rgba(245,203,221,1) 0%, rgba(148,187,233,1) 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    /* background-image: url("assets/corner-tl.png"), url("assets/corner-tr.png"), url("assets/corner-bl.png"), url("assets/corner-br.png");
-    background-position: top left, top right, bottom left, bottom right;
-    background-repeat: no-repeat; 
-    background-size: 10%; */
+    // background: rgb(245,203,221);
+    // background: #f5cbdd4f;
+    // background: #d8d8f282;
+    background: #fefefe;
+    // background: navy;
+    //background: linear-gradient(169deg, rgba(245,203,221,1) 0%, rgba(148,187,233,1) 100%);
+
+    //background-repeat: round;
+    //background-attachment: fixed;
     height: 100%;
     margin: 0;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Futura', sans-serif;
+    color: rgba(68,84,106,0.6);
+    // color: white;
 }
 
 h1, h2, h3, h4, p, input {
-    font-family: 'Poiret One', cursive;
+    font-family: 'Futura', sans-serif;
+    font-weight: 300;
 }

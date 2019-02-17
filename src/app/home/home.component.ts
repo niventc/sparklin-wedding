@@ -34,7 +34,7 @@ window.onscroll = () => {
   const container = document.getElementById("container");
   const content = document.getElementById("content");
 
-  if (window.pageYOffset > content.offsetTop - 100) {
+  if (window.pageYOffset + 150 > content.offsetTop) {
     container.classList.add("sticky");
   } else {
     container.classList.remove("sticky");

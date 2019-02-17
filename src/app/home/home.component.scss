@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     min-height: 100%;
+    width: 100%;
 
     .password-container {
         z-index: 1;
@@ -17,12 +18,35 @@
         }
     }
 
+    .chevron {
+        position: absolute;
+        bottom: 120px;
+    
+        .left, .right {
+            border-bottom: 3px solid white;
+            content: "";
+            width: 60px;
+            float: left;
+            box-shadow: 1px 1px 2px rgba(0,0,0,0.1), 
+                inset 1px 1px 2px rgba(0,0,0,0.1);
+        }
+    
+        .left {
+            transform: rotate(20deg);
+            margin-right: -1.5px;
+        }
+    
+        .right {
+            transform: rotate(-20deg);
+            margin-left: -1.5px;
+        }
+    }
+
     .panel {
         flex: 0 0 100%;
-        // position: relative;
+        align-items: center;
         text-align: center;
         display: flex;
-        align-items: center;
         justify-content: center;
         flex-direction: column;
 
@@ -30,19 +54,141 @@
             background-image: url("../../assets/watercolour-wedding-background.png");
             background-size: cover;
             min-height: 100vh;
-            box-shadow: 1px 1px 1px rgba(0,0,0,0.3);            
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            text-align: center;           
+        }
+    }
+
+    &.sticky {
+        .header {
+            position: fixed;
+            top: 0;
+            height: 100px;
+            min-height: 100px;
+            width: 100%;
+            z-index: 1;
+
+            h1 {
+                font-size: 3vw;
+                float: left;
+                position: fixed;
+                left: 15px;
+                margin: 0;
+            }
+
+            .links {
+                float: right;
+            }
         }
 
-        .rsvp-container {
+        #content {
+            margin-top: 100vh;
+        }
+    }
+}
+
+#container.side {
+
+    .panel {
+        flex: 0 0 80%;
+        box-sizing: border-box;
+
+        .section {
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            flex-direction: row;
+            width: 80%;
+            padding: 56px;
+            margin: 0 auto;
+  
+            > div, > iframe {
+                flex: 1 1 auto;
+            }
+
+            &#ceremony, &#reception, &#rsvp {
+                flex-direction: row-reverse;
+            }
+
+            .content {
+                flex: 0 0 50%;
+                width: 50%;
+                box-sizing: border-box;
+            }
+
+            .map-container, .rsvp-container {
+                flex: 0 0 50%;
+                width: 50%;
+                min-height: 400px;
+                box-sizing: border-box;
+                position: relative;
+                
+                iframe {
+                    border: 0;
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                }
+            }
+            
+            .rsvp-container {
+                height: 1000px;
+            }
+        }
+    }
+
+}
+
+#container.down {    
+
+    .panel {
+
+        .section {
             width: 100%;
-            height: 670px;
+        
+            .content {
+                max-width: 1200px;
+                margin: 24px auto;
+                //background: #d8d8f282;
+                padding: 24px;
+        
+                h1 {
+                    text-transform: uppercase;
+                }
+            }
         }
 
         .map-container {
             width: 100%;
-            height: 600px;
+            height: 400px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 -1px 2px rgba(0,0,0,0.3);
             
             iframe {
+                width: 100%;
+                border: 0;
+                height: 100%;
+                left: 0;
+                top: 0;
+            }
+
+            img {
+                display: none;
+            }
+        }
+
+        .rsvp-container {
+            overflow: hidden;
+            padding-top: 56.25%;
+            position: relative;
+
+            iframe {
+                border: 0;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                top: 0;
                 width: 100%;
             }
         }
@@ -84,22 +230,6 @@
                 transform: rotate(-2deg);
             }
         }
-
-
-        // .scroll-down {
-        //     &:after {
-        //         border-top: 30px solid rgb(204, 167, 0);
-        //         border-left: 90px solid transparent; 
-        //         border-right: 90px solid transparent; 
-        //         bottom: 0px;
-        //         content: "";
-        //         position: absolute;
-        //         left: 45%;
-        //         margin-left: -21px;
-        //         width: 0; 
-        //         height: 0;
-        //     }
-        // }
     }
 
     &.sticky {
@@ -123,47 +253,47 @@
             }
         }
 
-        .content {
+        #content {
             margin-top: 100vh;
         }
     }
 }
 
-
-h1 {
-    margin: 100px;
+.curly {
     font-family: 'Monsieur La Doulaise', cursive;
+}
+
+.bold {
+    font-weight: 500;
+}
+
+.l {
+    font-size: 4em;
+}
+
+.xl {
     font-size: 12vw;
+}
+
+.white {
     color: white;
-    font-weight: 500;
+    //color: #8496b0;
+}
+
+.shadow {
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
-h3 {
-    font-size: 3vw;
-    color: white;
-    font-weight: 500;
+.small-margin {
+    margin: 0.2em 0;
+}
+
+.no-top {
+    margin-top: 0;
+}
+
+h3, h4 {
     margin: 0;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-
-    &.script {
-        font-family: 'Monsieur La Doulaise', cursive;
-        font-size: 6vw;
-    }
-}
-h4 {
-    font-size: 2vw;
-    color: white;
-    font-weight: 500;
-    margin: 0;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-.section {
-    h1 {
-        font-size: 5vw;
-        margin: 120px 0 24px;
-    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -199,32 +329,37 @@ h4 {
         margin: 80px;
         font-size: 16vw;
     }
+
+    #container.side {
+        .panel {
+            .section, 
+            .section#ceremony,
+            .section#reception,
+            .section#rsvp {
+                flex-direction: column;
+                margin: 0;
+                width: 100%;
+                padding: 24px;
+
+                .content, .map-container, .rsvp-container {
+                    flex: 0 0 auto;
+                    width: 100%;
+
+                    iframe {
+                        padding-top: 24px;
+                    }
+
+                    > img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
 
-.chevron {
-    position: absolute;
-    bottom: 120px;
 
-    .left, .right {
-        border-bottom: 3px solid white;
-        content: "";
-        width: 60px;
-        float: left;
-        box-shadow: 1px 1px 2px rgba(0,0,0,0.1), 
-            inset 1px 1px 2px rgba(0,0,0,0.1);
-    }
-
-    .left {
-        transform: rotate(20deg);
-        margin-right: -1.5px;
-    }
-
-    .right {
-        transform: rotate(-20deg);
-        margin-left: -1.5px;
-    }
-}
 
 .links {
     text-transform: uppercase;
@@ -232,7 +367,6 @@ h4 {
     a {
         margin: 15px;
         font-size: 2em;
-        font-weight: 900;
         color: white;
         padding: 6px;
         text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
@@ -245,13 +379,8 @@ h4 {
     }
 }
 
-.section {
-    width: 100%;
-}
-
 hr {
-    width: 60%;
+    width: 40%;
     border: none;
-    border-bottom: 2px solid white;
-    margin-top: 100px;
+    border-bottom: 1px solid rgba(68,84,106,0.6);
 }

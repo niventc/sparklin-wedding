@@ -1,8 +1,8 @@
 
-<div id="container">
+<div id="container" class="side">
 
   <div class="panel header">
-    <h1>
+    <h1 class="xl white curly shadow">
       Sparklin Wedding
     </h1>
 
@@ -12,7 +12,7 @@
     <div class="inner-border small left"></div> -->
 
     <div class="password-container" *ngIf="!(isDayGuest || isEveningGuest)">
-      <input size="9" type="text" name="password" id="password" placeholder="Password" [ngModel]="password" (ngModelChange)="checkPassword($event)" />
+      <input size="9" type="password" name="password" id="password" placeholder="Password" [ngModel]="password" (ngModelChange)="checkPassword($event)" />
     </div>
 
     <div class="links" *ngIf="isDayGuest || isEveningGuest">
@@ -29,97 +29,133 @@
     </div>
   </div>
 
-  <div id="content" class="panel content" *ngIf="isDayGuest || isEveningGuest">
+  <div id="content" class="panel" *ngIf="isDayGuest || isEveningGuest">
 
     <div id="ceremony" class="section" *ngIf="isDayGuest">
-      <h1>Ceremony</h1>
+      <div class="content">
+        <div>
+          <h1 class="curly l small-margin">Ursula Carlin</h1>
+          <h4>and</h4>
+          <h1 class="curly l small-margin">Vincent Sparkes</h1>
 
-      <h4>Join us to celebrate the union of</h4>
-      <h3 class="script">Vincent Sparkes & Ursula Carlin</h3>
+          <h3>&nbsp;</h3>
 
-      <h3>Saturday 22nd June 2019</h3>
-      <h3>2pm</h3>
-      <h4>at</h4>
-      <h3>The Ritz Hotel, Piccadilly, London</h3>
+          <h3>Request the honour of your presence at their wedding</h3>
 
-      <div style="padding:24px"></div>
+          <h3>&nbsp;</h3>
 
-      <h4>Dress code; formal</h4>
+          <h3>The Ritz Hotel, London</h3>
+          <h3>Saturday 22nd June 2019</h3>
+          <h3>2PM</h3>
+        </div>
+      </div>
 
-      <div style="padding:24px"></div>
-
-      <div class="map-container" style="width: 100%">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.3416409879333!2d-0.14376628366171024!3d51.50694791855627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760529d30fc857%3A0x596135811e044014!2sThe+Ritz+London!5e0!3m2!1sen!2suk!4v1544996338298" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.3416409879333!2d-0.14376628366171024!3d51.50694791855627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760529d30fc857%3A0x596135811e044014!2sThe+Ritz+London!5e0!3m2!1sen!2suk!4v1544996338298" allowfullscreen></iframe>
       </div>
     </div>
 
+    <hr *ngIf="isDayGuest" />
+
     <div id="tea" class="section" *ngIf="isDayGuest">
-      <h1>Tea</h1>
+      <div class="content">
+        <h1 class="curly l no-top">Afternoon Tea Menu</h1>
 
-      <h3 style="text-transform: uppercase">Sandwiches</h3>
-      <h4>Ham with Grain Mustard Mayonnaise on Brioche Bread</h4>
-      <h4>Cheddar Cheese with Chutney on Tomato Bread</h4>
-      <h4>Cucumber with Cream Cheese, Dill and Chives on Granary Bread</h4>
-      <h4>Breast of Chicken with Tarragon Creamed Mayonnaise</h4>
-      <h4>Scottish Smoked Salmon with Lemon Butter on Sourdough Bread</h4>
-      <h4>Egg Mayonnaise with Chopped Shallots and Watercress on Brioche Roll</h4>
+        <h3 class="bold" style="text-transform: uppercase">Sandwiches</h3>
+        <h3>Ham with Grain Mustard Mayonnaise on Brioche Bread</h3>
+        <h3>Cheddar Cheese with Chutney on Tomato Bread</h3>
+        <h3>Cucumber with Cream Cheese, Dill and Chives on Granary Bread</h3>
+        <h3>Breast of Chicken with Tarragon Creamed Mayonnaise</h3>
+        <h3>Scottish Smoked Salmon with Lemon Butter on Sourdough Bread</h3>
+        <h3>Egg Mayonnaise with Chopped Shallots and Watercress on Brioche Roll</h3>
 
-      <div style="padding:24px"></div>
+        <div style="padding:24px"></div>
 
-      <h3 style="text-transform: uppercase">Scones And Pastries</h3>
-      <h4>Freshly Baked Raisin and Plain Scones</h4>
-      <h4>with Cornish Clotted Cream and Strawberry Preserve</h4>
-      <h4>Assortment of Seasonal Afternoon Tea Pastries and Cakes</h4>
-      
-      <div style="padding:24px"></div>
+        <h3 class="bold" style="text-transform: uppercase">Scones And Pastries</h3>
+        <h3>Freshly Baked Raisin and Plain Scones</h3>
+        <h3>with Cornish Clotted Cream and Strawberry Preserve</h3>
+        <h3>Assortment of Seasonal Afternoon Tea Pastries and Cakes</h3>
+        
+        <div style="padding:24px"></div>
 
-      <h3 style="text-transform: uppercase">Tea</h3>
-      <h4><span style="text-transform: uppercase">Ritz Royal English</span> A blend of Kenyan, Assam and Ceylon Orange Pekoe</h4>
-      <h4><span style="text-transform: uppercase">Rose Congou</span> A black enriched tea with rose petals from Guangdong, China</h4>
-      <h4><span style="text-transform: uppercase">Lapsang Souchong</span> A black tea from Fujian China, traditionally smoked over pine fies</h4>
+        <h3 class="bold" style="text-transform: uppercase">Tea</h3>
+        <h3><span style="text-transform: uppercase">Ritz Royal English</span> - A blend of Kenyan, Assam and Ceylon Orange Pekoe</h3>
+        <h3><span style="text-transform: uppercase">Rose Congou</span> - A black enriched tea with rose petals from Guangdong, China</h3>
+        <h3><span style="text-transform: uppercase">Lapsang Souchong</span> - A black tea from Fujian China, traditionally smoked over pine fires</h3>
+      </div>
+
+      <div class="map-container">
+        <img src="../../assets/tea.png" />
+      </div>
     </div>
 
     <hr *ngIf="isDayGuest" />
 
     <div id="reception" class="section">
-      <h1>Reception</h1>
+      <div class="content">
+        <div>
+          <h1 class="curly l no-top">Reception</h1>
 
-      <h3 *ngIf="!isDayGuest">Saturday 22nd June 2019</h3>
-      <h3>5pm until 11pm</h3>
-      <h4>at</h4>
-      <h3>Blue Posts, Bennet Street, London</h3>
-  
-      <div style="padding:24px"></div>
+          <h3>Blue Posts, Bennet Street, London</h3>
+          <h3 *ngIf="!isDayGuest">Saturday 22nd June 2019</h3>
+          <h3>6pm until 11pm</h3>
 
-      <h4>Dress code; casual</h4>
+          <h3>&nbsp;</h3>
 
-      <div style="padding:24px"></div>
-  
-      <div class="map-container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.3427909912743!2d-0.14272598366175196!3d51.50692681855789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d62cd18d37%3A0x8b17e94d52ee3429!2sBlue+Posts!5e0!3m2!1sen!2suk!4v1544996724129" width="800" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+          <h3>Drinks and light buffet</h3>
+        </div>
       </div>
-    </div>
 
-    <div id="registry" class="section">
-      <h1>Registry</h1>
-      <h4>
-        Rather than the traditional registry, we ask that guests wishing to present a gift, instead contribute to our honeymoon fund. 
-      </h4>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.3427909912743!2d-0.14272598366175196!3d51.50692681855789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604d62cd18d37%3A0x8b17e94d52ee3429!2sBlue+Posts!5e0!3m2!1sen!2suk!4v1544996724129" allowfullscreen></iframe>
+      </div>
     </div>
 
     <hr />
 
-    <div id="rsvp" class="section">  
-      <h1>RSVP</h1>  
-      <div class="rsvp-container" *ngIf="isDayGuest">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSflvMF-OCwgPWS2vSXf-9ti1TJNK24QqD1USpYlfHev1UDpyw/viewform?embedded=true" width="640px" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    <div id="registry" class="section">
+      <div class="content">
+        <div>
+          <h1 class="curly l no-top">Registry</h1>
+          <h3>
+            We are registered at the WeddingShop.com
+          </h3>
+          <h3>&nbsp;</h3>
+          <a href="https://www.weddingshop.com/Buy/View/43800" target="_blank">Our Registry</a>
+          <h3>&nbsp;</h3>
+          <h3>
+            We are planning a round the world trip for our honeymoon, so any contributions are received with thanks
+          </h3>
+        </div>
       </div>
+      <div class="map-container">
+        <img src="../../assets/registry.png" style="height: 400px" />
+      </div>
+    </div>
+
+    <hr />
+
+    <div id="rsvp" class="section">
+      <div class="content">
+        <div>
+          <h1>RSVP</h1>
+
+          <h3>Please inform us of any dietary requirements when you RSVP</h3>
+          <h3 *ngIf="isDayGuest">Formal dress code</h3>
+          <h3 *ngIf="!isDayGuest">Casual dress code</h3>
+          <h3 *ngIf="isDayGuest">Guests may arrive from 1.30pm</h3>
+          <h3>&nbsp;</h3>
+          <h3>Please contact Vincent or Ursula if you have any additional questions</h3>
+        </div>
+
+      </div>
+      <div class="rsvp-container" *ngIf="isDayGuest">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSflvMF-OCwgPWS2vSXf-9ti1TJNK24QqD1USpYlfHev1UDpyw/viewform?embedded=true" seamless scrolling="no" allowfullscreen>Loading...</iframe>
+      </div>      
 
       <div class="rsvp-container" *ngIf="isEveningGuest">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffSDBHgZECYHRsiOFrkoctkFJAZI8IIr4oEbiX34FLmTdZeg/viewform?embedded=true" width="640px" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>      
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSffSDBHgZECYHRsiOFrkoctkFJAZI8IIr4oEbiX34FLmTdZeg/viewform?embedded=true" allowfullscreen>Loading...</iframe>      
       </div>
-
-      <div style="padding:24px"></div>
     </div>
   </div>
 </div>
