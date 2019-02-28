@@ -30,13 +30,15 @@ export class HomeComponent implements OnInit {
 }
 
 
-window.onscroll = () => {
-  const container = document.getElementById("container");
-  const content = document.getElementById("content");
+window.onscroll = () => {  
+  if (window.innerWidth > 600) {
+    const container = document.getElementById("container");
+    const content = document.getElementById("content");
 
-  if (window.pageYOffset + 150 > content.offsetTop) {
-    container.classList.add("sticky");
-  } else {
-    container.classList.remove("sticky");
+    if (window.pageYOffset + 150 > content.offsetTop) {
+      container.classList.add("sticky");
+    } else {
+      container.classList.remove("sticky");
+    }
   }
 };

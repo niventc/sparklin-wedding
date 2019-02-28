@@ -2,6 +2,20 @@
 <div id="container" class="side">
 
   <div class="panel header">
+
+    <div id="mobile-nav" *ngIf="isDayGuest || isEveningGuest">
+      <mat-icon *ngIf="!showLinks" (click)="showLinks = true">menu</mat-icon>
+      <mat-icon *ngIf="showLinks" (click)="showLinks = false">close</mat-icon>
+
+      <div class="links" *ngIf="showLinks">
+        <a href="#ceremony" *ngIf="isDayGuest">Ceremony</a>
+        <a href="#tea" *ngIf="isDayGuest">Tea</a>
+        <a href="#reception">Reception</a>
+        <a href="#registry">Registry</a>
+        <a href="#rsvp">RSVP</a>
+      </div>
+    </div>
+    
     <h1 class="xl white curly shadow">
       Sparklin Wedding
     </h1>
@@ -12,7 +26,7 @@
     <div class="inner-border small left"></div> -->
 
     <div class="password-container" *ngIf="!(isDayGuest || isEveningGuest)">
-      <input size="9" type="password" name="password" id="password" placeholder="Password" [ngModel]="password" (ngModelChange)="checkPassword($event)" />
+      <input size="12" type="password" name="password" id="password" placeholder="Password" [ngModel]="password" (ngModelChange)="checkPassword($event)" />
     </div>
 
     <div class="links" *ngIf="isDayGuest || isEveningGuest">
@@ -84,8 +98,8 @@
         <h3><span style="text-transform: uppercase">Lapsang Souchong</span> - A black tea from Fujian China, traditionally smoked over pine fires</h3>
       </div>
 
-      <div class="map-container">
-        <img src="../../assets/tea.png" />
+      <div class="image-container">
+        <img src="../../assets/tea.png" style="width: 400px" />
       </div>
     </div>
 
@@ -128,7 +142,7 @@
           </h3>
         </div>
       </div>
-      <div class="map-container">
+      <div class="image-container">
         <img src="../../assets/registry.png" style="height: 400px" />
       </div>
     </div>
