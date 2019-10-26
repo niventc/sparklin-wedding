@@ -11,8 +11,26 @@
     <!-- <div class="inner-border small right"></div>
     <div class="inner-border small left"></div> -->
 
-    <div class="password-container" *ngIf="!(isDayGuest || isEveningGuest)">
+    <div class="password-container" *ngIf="!(isDayGuest || isEveningGuest || isThanksGuest)">
       <input size="9" type="password" name="password" id="password" placeholder="Password" [ngModel]="password" (ngModelChange)="checkPassword($event)" />
+    </div>
+
+    <div id="photos" *ngIf="isThanksGuest">
+      <h2>
+        Thank you for celebrating our wedding with us! Please feel free to browse our pictures of the day, and our honeymoon.
+      </h2>
+      <h2>        
+        We'd love to see what photos you took as well, so please upload your photos to the guest album!
+      </h2>
+      <a id="weddingphotos" href="https://photos.app.goo.gl/sqiY4T2jfMm9fips7" target="_blank">
+        <p>The Wedding</p>
+      </a>
+      <a id="honeymoon" href="https://photos.app.goo.gl/qQpDxmjR74V7iDST6" target="_blank">
+        <p>The Honeymoon</p>
+      </a>
+      <a id="guest" href="https://photos.app.goo.gl/zHnV3aT4Se1m1hNf9" target="_blank">
+        <p>Guest Album</p>
+      </a>
     </div>
 
     <div class="links" *ngIf="isDayGuest || isEveningGuest">
