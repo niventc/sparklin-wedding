@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
   }
 }
 
+<<<<<<< HEAD
 window.onscroll = () => {
   const container = document.getElementById("container");
   const content = document.getElementById("content");
@@ -40,5 +41,18 @@ window.onscroll = () => {
     container.classList.add("sticky");
   } else {
     container.classList.remove("sticky");
+=======
+
+window.onscroll = () => {  
+  if (window.innerWidth > 600) {
+    const container = document.getElementById("container");
+    const content = document.getElementById("content");
+
+    if (window.pageYOffset + 150 > content.offsetTop) {
+      container.classList.add("sticky");
+    } else {
+      container.classList.remove("sticky");
+    }
+>>>>>>> b8c56e3419f88a2e5280464375414f1ce5130c5d
   }
 };
